@@ -9,7 +9,7 @@
  * Return: int
 */
 
-int handle_content(const char *data,int *index, va_list args, char content[])
+int handle_content(const char *data, int *index, va_list args, char content[])
 {
 	int i, chars, index;
 	da_ta data_type[] = {

@@ -21,6 +21,13 @@ struct data
 
 	int (*f)(va_list, char*, int*);
 };
+/**
+ * typedef struct data da_ta - Struct op
+ *
+ * @data: The format.
+ * @da_ta: The function associated.
+ */
+typedef struct data da_ta;
 
 /* functions Prototypes */
 

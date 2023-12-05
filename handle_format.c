@@ -12,7 +12,7 @@
 int handle_content(const char *data,  int *index, va_list args, char content[])
 {
 	int i, chars;
-	data data_type[] = {
+	da_ta data_type[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},

@@ -1,20 +1,18 @@
 #include"main.h"
 
+char *str = va_arg(args, char*);
 /**
  * print_string - Prints a string
- * @args: List a of arguments
+ * @args: List a of6 arguments
  * @content: Buffer array to handle print
  * Return: Number of chars
 */
-
 int print_string(va_list args, char content[])
 {
-	int length = 0, i;
+	int length = 0;
 
-	char *str = va_arg(args, char *);
+	char *str = va_arg(types, char *);
 
-	if (str == NULL)
-		str = "(null)";
 	while (str[length] != '\0')
 		length++;
 
@@ -37,7 +35,7 @@ int print_char(va_list args, char content[])
 
 /**
  * print_percent - Prints a percent sign
- * @args: List a of arguments
+ * @list: List a of arguments
  * @content: Buffer array to handle print
  * Return: Number of chars
 */

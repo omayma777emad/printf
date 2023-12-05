@@ -11,9 +11,8 @@ int _printf(const char *format, ...)
 	int chars = 0, outpu = 0;
 	char content[CONT_SIZE];
 	va_list args;
-	
-	va_start(args, format);
 
+	va_start(args, format);
 	while (*format != NULL)
 	{
 		if (*format != '%')
@@ -21,7 +20,7 @@ int _printf(const char *format, ...)
 			write(1, format, 1);
 			chars++;
 		}
-		else 
+		else
 		{
 			format++;
 			cont_array(content, &cont_index);
@@ -33,7 +32,6 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (chars);
 }
-
 /**
  * cont_array - Prints the contents of the buffer if it exist
  * @content: Array of chars

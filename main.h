@@ -18,9 +18,9 @@
 struct data
 {
 	char data;
+
 	int (*f(char format)(va_list, char*, int*);
 };
-
 
 /**
  * typedef struct data data_type - Struct op

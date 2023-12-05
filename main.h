@@ -9,25 +9,25 @@
 #define CONT_SIZE 1024
 
 /**
- * struct data - Struct op
+ * struct fmt - Struct op
  *
- * @data: The format.
- * @f: The function associated.
+ * @fmt: The format.
+ * @fn: The function associated.
  */
-
-struct data
+struct spc
 {
-	char data;
-
-	int (*f)(va_list, char[], int);
+	char spc;
+	int (*f)(va_list, char[], int, int, int, int);
 };
+
+
 /**
- * typedef struct data da_ta - Struct op
+ * typedef struct fmt fmt_t - Struct op
  *
- * @data: The format.
- * @da_ta: The function associated.
+ * @fmt: The format.
+ * @fm_t: The function associated.
  */
-typedef struct data da_ta;
+typedef struct spc spc_f;
 
 /* functions Prototypes */
 

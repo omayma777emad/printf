@@ -9,10 +9,10 @@
  * Return: int
 */
 
-int handle_content(const char *data, int *index, va_list args, char content[])
+int handle_print(const char *spc, int *index, va_list args, char content[])
 {
-	int i, chars, index;
-	da_ta data_type[] = {
+	int i,  chars = -1;
+	spc_f spc_types[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
@@ -20,12 +20,12 @@ int handle_content(const char *data, int *index, va_list args, char content[])
 		{'d', print_int},
 		{'\0', NULL}
 	};
-	for (i = 0; data_type[i].data != '\0'; i++)
-		if (data[*index] == data_type[i].data)
-			return (data_type[i].f(args, content));
-	if (data_type[i].data == '\0')
+	for (i = 0; spc_types[i].spc != '\0'; i++)
+		if (spc[*index] == spc_type[i].spc)
+			return (spc_type[i].f(args, content));
+	if (spc_type[i].spc == '\0')
 	{
-		if (data[*index] == '\0')
+		if (spc[*index] == '\0')
 			return (-1);
 }
 return (chars);

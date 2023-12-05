@@ -2,7 +2,6 @@
 
 /**
  * print_int - handles the i case in printf
- *
  * @args:arguments list
  * @content:srray to handle printing
 */

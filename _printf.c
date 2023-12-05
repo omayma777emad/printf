@@ -1,45 +1,56 @@
-#include"main.h"
+#include "main.h"
+
+void cont_array(char content[], int *cont_index);
 
 /**
- * _printf - is a print function
- * @format: specific format
- * Return: chars
-*/
-
+ * _printf - Printf function
+ * @format: format.
+ * Return: Printed chars.
+ */
 int _printf(const char *format, ...)
 {
-	int chars = 0, outpu = 0;
-	char content[CONT_SIZE];
+	int i, output = 0, chars = 0;
+	int cont_index = 0;
 	va_list args;
+	char content[CONT_SIZE];
 
 	va_start(args, format);
-	while (*format != NULL)
+
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
-		if (*format != '%')
+		if (format[i] != '%')
 		{
-			write(1, format, 1);
+			content[cont_index++] = format[i];
+			if (cont_index == CONT_SIZE)
+				cont_array(content, &cont_index);
 			chars++;
 		}
 		else
 		{
-			format++;
 			cont_array(content, &cont_index);
-			output = handle_content(format, args);
+			++i;
+			output = handle_content(format, i, args, content);
+			
 			chars += output;
 		}
 	}
+
 	cont_array(content, &cont_index);
+
 	va_end(args);
+
 	return (chars);
 }
+
 /**
  * cont_array - Prints the contents of the buffer if it exist
  * @content: Array of chars
- * @cont_index: Index at which to add next char.
-*/
+ * @cont_index: Index at which to add next char, represents the length.
+ */
 void cont_array(char content[], int *cont_index)
 {
-	if (*cont_array > 0)
-		write(1, &content[0], *cont_array);
-	cont_index = 0;
+	if (*cont_index > 0)
+		write(1, &content[0], *cont_index);
+
+	*cont_index = 0;
 }

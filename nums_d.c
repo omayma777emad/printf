@@ -1,11 +1,11 @@
-include "main.h"
+#include "main.h"
 
 /**
- * print_int - handles the d case in printf 
- *
+ * print_int - handles the d case in printf
  * @args:arguments
  * @content:array for print handling
-*/
+ */
+
 void print_int(va_list args, int content[])
 {
 	int v = va_args(arg, int);
@@ -17,7 +17,7 @@ void print_int(va_list args, int content[])
 
 	if (v < 0)
 	{
-		_puttchar('-');
+		_putchar('-');
 		v = -v;
 	}
 

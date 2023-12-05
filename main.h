@@ -19,7 +19,7 @@ struct data
 {
 	char data;
 
-	int (*f)(va_list, char*, int*);
+	int (*f)(va_list, char[], int);
 };
 /**
  * typedef struct data da_ta - Struct op

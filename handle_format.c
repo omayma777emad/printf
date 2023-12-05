@@ -6,12 +6,12 @@
  * @args: List of arguments to be printed.
  * @index: index
  * @content: Buffer array to handle print.
- * Return: 1 or 2;
+ * Return: int
 */
 
-int handle_content(const char *data,  int *index, va_list args, char content[])
+int handle_content(const char *data,int *index, va_list args, char content[])
 {
-	int i, chars;
+	int i, chars, index;
 	da_ta data_type[] = {
 		{'c', print_char},
 		{'s', print_string},

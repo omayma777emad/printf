@@ -10,10 +10,13 @@ int handle_content( va_list args, int index, char content[]);
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	va_start(args, format);
 	int i, output = 0, chars = 0;
 	int cont_index = 0;
+	va_list args;
+	if (format == NULL)
+		return (-1);
+
+	va_start(args, format);
 	char content[CONT_SIZE];
 	
 	for (i = 0; format && format[i] != '\0'; i++)

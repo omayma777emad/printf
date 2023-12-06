@@ -9,5 +9,5 @@
 
 int handle_write_char(char c, char content[])
 {
-	return (write(1, &buffer[0], 1));
+	return (write(1, &content[0], 1));
 }

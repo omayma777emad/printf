@@ -30,7 +30,7 @@ int print_char(va_list args, char content[])
 {
 	char c = va_arg(args, int);
 
-	return (handle_write_char(c, content));
+	handle_write_char(c, content);
 }
 
 /**

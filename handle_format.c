@@ -9,7 +9,7 @@
  * Return: int
 */
 
-int handle_print(const char *spc, int *index, va_list args, char content[])
+int handle_content(const char *spc, int *index, va_list args, char content[])
 {
 	int i,  chars = -1;
 	spc_f spc_types[] = {

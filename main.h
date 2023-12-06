@@ -9,35 +9,27 @@
 #define CONT_SIZE 1024
 
 /**
- * struct fmt - Struct op
+ * typedef struct spc spc_f - Struct op
  *
- * @fmt: The format.
- * @fn: The function associated.
+ * @spc: The format.
+ * @f: The function associated.
  */
-struct spc
+typedef struct spc
 {
 	char spc;
 	int (*f)(va_list, char[], int, int, int, int);
-};
+} spc_f;
 
-
-/**
- * typedef struct fmt fmt_t - Struct op
- *
- * @fmt: The format.
- * @fm_t: The function associated.
- */
-typedef struct spc spc_f;
 
 /* functions Prototypes */
 
 /**int _putchar(char c);*/
 int _printf(const char *format, ...);
-int handle_content(const char *data,int *index, va_list args, char content[])
+int handle_print(const char *spc, int *index, va_list args, char content[]);
 int handle_write_char(char c, char content);
 int print_char(va_list args, char content[]);
 int print_string(va_list args, char content[]);
 int print_percent(va_list args, char content[]);
 /**void print_int(va_list args, int content[]);*/
 
-#endif
+#endifi

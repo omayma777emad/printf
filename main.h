@@ -17,7 +17,7 @@
 typedef struct spc
 {
 	char spc;
-	int (*f)(va_list, char[], int);
+	int (*f)(va_list, char[]);
 } spc_f;
 
 
@@ -25,7 +25,7 @@ typedef struct spc
 
 /**int _putchar(char c);*/
 int _printf(const char *format, ...);
-int handle_print(const char *spc, int *index, va_list args, char content[]);
+int handle_print( int *index, va_list args, char content[]);
 int handle_write_char(char c, char content);
 int print_char(va_list args, char content[]);
 int print_string(va_list args, char content[]);

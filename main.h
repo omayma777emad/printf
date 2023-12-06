@@ -17,7 +17,7 @@
 typedef struct spc
 {
 	char spc;
-	int (*f)(va_list, char[], int, int, int, int);
+	int (*f)(va_list, char[], int);
 } spc_f;
 
 
@@ -32,4 +32,4 @@ int print_string(va_list args, char content[]);
 int print_percent(va_list args, char content[]);
 /**void print_int(va_list args, int content[]);*/
 
-#endifi
+#endif

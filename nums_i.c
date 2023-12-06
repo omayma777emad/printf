@@ -5,7 +5,7 @@
  * @args:arguments list
  * @content:srray to handle printing
 */
-void print_int(va_list args, int content[])
+int print_int(va_list args, int content[])
 {
 	int reg = args(arg, int);
 	int ver = 0;

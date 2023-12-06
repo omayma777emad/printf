@@ -6,7 +6,7 @@
  * @content:array for print handling
  */
 
-void print_int(va_list args, int content[])
+int print_int(va_list args, int content[])
 {
 	int v = va_args(arg, int);
 

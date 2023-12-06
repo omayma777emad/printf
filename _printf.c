@@ -12,9 +12,8 @@ int _printf(const char *format, ...)
 {
 	int i, output = 0, chars = 0;
 	int cont_index = 0;
-	va_list args;
 	char content[CONT_SIZE];
-
+	va_list args;
 	va_start(args, format);
 
 	for (i = 0; format && format[i] != '\0'; i++)

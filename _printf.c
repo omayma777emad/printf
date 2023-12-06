@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		{
 			cont_array(content, &cont_index);
 			++i;
-			output = handle_content(format, i, args, content);
+			output = handle_content(const char *spc, int *index, va_list args, char content[]);
 			
 			chars += output;
 		}

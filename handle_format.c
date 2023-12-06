@@ -11,6 +11,7 @@
 
 int handle_content(const char *spc, int *index, va_list args, char content[])
 {
+	char spc_types[];
 	int i,  chars = -1;
 	spc_f spc_types[] = {
 		{'c', print_char},

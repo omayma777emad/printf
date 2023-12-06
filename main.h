@@ -26,7 +26,7 @@ typedef struct spc
 /**int _putchar(char c);*/
 int _printf(const char *format, ...);
 int handle_print(va_list args, int index, char content[]);
-int handle_write_char(char c, char content);
+int handle_write_char(char c, char content[]);
 int print_char(va_list args, char content[]);
 int print_string(va_list args, char content[]);
 int print_percent(va_list args, char content[]);

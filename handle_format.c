@@ -11,9 +11,8 @@
 
 int handle_content(const char *spc, int *index, va_list args, char content[])
 {
-	char spc_types[];
 	int i,  chars = -1;
-	spc_f spc_types[] = {
+	spc_f spc[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
@@ -21,10 +20,10 @@ int handle_content(const char *spc, int *index, va_list args, char content[])
 		{'d', print_int},
 		{'\0', NULL}
 	};
-	for (i = 0; spc_types[i].spc != '\0'; i++)
-		if (spc[*index] == spc_type[i].spc)
-			return (spc_type[i].f(args, content));
-	if (spc_type[i].spc == '\0')
+	for (i = 0; spc[i].spc_f != '\0'; i++)
+		if (spc[*index] == spc[i].spc_f)
+			return (spc[i].f(args, content));
+	if (spc[i].spc_f == '\0')
 	{
 		if (spc[*index] == '\0')
 			return (-1);

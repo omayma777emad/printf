@@ -9,7 +9,7 @@
  * Return: int
 */
 
-int handle_content( int *index, va_list args, char content[])
+int handle_content( va_list args, char content[])
 {
 	int i,  chars = -1;
 	spc_f spc[] = {
@@ -21,7 +21,7 @@ int handle_content( int *index, va_list args, char content[])
 		{'\0', NULL}
 	};
 	for (i = 0; spc[i].spc != '\0'; i++)
-		if (spc[index].spc == spc[i].spc_f)
+		if (spc[i].spc == spc[i].spc_f)
 			return (spc[i].f(args, content));
 
 return (chars);

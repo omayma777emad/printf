@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		{
 			cont_array(content, &cont_index);
 			++i;
-			output = handle_content( va_list args, int index, char content[]);
+			output = handle_content(args, index, content[]);
 			
 			chars += output;
 		}

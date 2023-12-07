@@ -30,6 +30,6 @@ int handle_write_char(char c, char content[]);
 int print_char(va_list args, char content[]);
 int print_string(va_list args, char content[]);
 int print_percent(va_list args, char content[]);
-/**int print_int(va_list args, char content[]);*/
+int print_int(va_list args, char content[]);
 
 #endif

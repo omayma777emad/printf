@@ -6,17 +6,16 @@
  * @content: array to handle print
  * Return: Number of chars
 */
-int print_string( char str[])
+
+int print_string(va_list types, char content[])
 {
-	int length = 0;
-	char str;
+	int length = 0, i;
+	char *str = va_arg(types, char *);
 
 	while (str[length] != '\0')
 		length++;
-
 	return (write(1, str, length));
 }
-
 /**
  * print_char - Prints a char
  * @args: List a of arguments
@@ -24,12 +23,12 @@ int print_string( char str[])
  * Return: Number of chars
 */
 
-int print_char( char content[])
+int print_char(va_list types, char content[])
 {
+	char c = va_arg(types, int);
 
-	return (write(1, &content[0], 1));
+	return (handle_write_char(c, content));
 }
-
 /**
  * print_percent - Prints a percent sign
  * @list: List a of arguments
@@ -37,7 +36,7 @@ int print_char( char content[])
  * Return: Number of chars
 */
 
-int print_percent()
+int print_percent(va_list types, char content[])
 {
 	return (write(1, "%%", 1));
 }

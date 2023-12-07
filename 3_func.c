@@ -2,8 +2,8 @@
 
 /**
  * print_string - Prints a string
- * @args: List a of6 arguments
- * @content: array to handle print
+ * @args: List a of arguments
+ * @content: array
  * Return: Number of chars
 */
 
@@ -11,6 +11,7 @@ int print_string(va_list args, char content[])
 {
 	int length = 0;
 	char *str = va_arg(args, char *);
+
 	UNUSED(content);
 
 	while (str[length] != '\0')
@@ -20,7 +21,7 @@ int print_string(va_list args, char content[])
 /**
  * print_char - Prints a char
  * @args: List a of arguments
- * @content: Buffer array to handle print
+ * @content:array
  * Return: Number of chars
 */
 
@@ -32,8 +33,8 @@ int print_char(va_list args, char content[])
 }
 /**
  * print_percent - Prints a percent sign
- * @list: List a of arguments
- * @content: Buffer array to handle print
+ * @args: List a of arguments
+ * @content: array
  * Return: Number of chars
 */
 

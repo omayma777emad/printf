@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- * printf_int - prints integer
+ * print_int - prints integer
  * @args: argument to print
+ * @content: array
  * Return: number of characters printed
  */
 int print_int(va_list args, char content[])
@@ -9,6 +10,7 @@ int print_int(va_list args, char content[])
 	int n = va_arg(args, int);
 	int end = n % 10, digit, ex = 1;
 	int number, chars = 1;
+
 	UNUSED(content);
 
 	n = n / 10;

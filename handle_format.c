@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * handle_content - Prints an argument based on its type
- * @data: Formatted string in which to print the arguments.
+ * handle_content - Prints an argument
  * @args: List of arguments to be printed.
  * @index: index
- * @content: Buffer array to handle print.
+ * @content: array
  * Return: int
 */
 

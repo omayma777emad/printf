@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 	char content[CONT_SIZE];
 
 	va_list args;
+
 	va_start(args, format);
-	
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 			cont_array(content, &cont_index);
 			++i;
 			output = handle_content(args, *format, content);
-			
 			chars += output;
 		}
 	}

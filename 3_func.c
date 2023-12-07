@@ -10,6 +10,7 @@ int print_string(va_list args, char content[])
 {
 	va_list args;
 	int length = 0;
+	char str[];
 
 	while (str[length] != '\0')
 		length++;

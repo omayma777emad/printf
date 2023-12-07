@@ -11,13 +11,11 @@ int handle_content( va_list args, int index, char content[]);
 int _printf(const char *format, ...)
 {
 	int i, output = 0, chars = 0;
-	int cont_index = 0;
-	va_list args;
-	if (format == NULL)
-		return (-1);
-
-	va_start(args, format);
+	int cont_index = 0, index;
 	char content[CONT_SIZE];
+
+	va_list args;
+	va_start(args, format);
 	
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
@@ -32,7 +30,7 @@ int _printf(const char *format, ...)
 		{
 			cont_array(content, &cont_index);
 			++i;
-			output = handle_content(args, index, content[]);
+			output = handle_content(args, index, content);
 			
 			chars += output;
 		}

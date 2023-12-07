@@ -23,7 +23,7 @@ int print_string(va_list args)
  * Return: Number of chars
 */
 
-int print_char(va_list args, char content[])
+int print_char(va_list args)
 {
 	char c = va_arg(args, int);
 
@@ -36,7 +36,7 @@ int print_char(va_list args, char content[])
  * Return: Number of chars
 */
 
-int print_percent(va_list args)
+int print_percent()
 {
 	return (write(1, "%%", 1));
 }

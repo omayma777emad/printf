@@ -23,7 +23,7 @@ typedef struct spc
 
 /* functions Prototypes */
 
-/**int _putchar(char c);*/
+int _putchar(char c);
 int _printf(const char *format, ...);
 int handle_content(va_list args, int index, char content[]);
 int handle_write_char(char c, char content[]);

@@ -10,8 +10,10 @@ char *str = va_arg(args, char*);
 int print_string(va_list args, char content[])
 {
 	int length = 0;
+	char *str;
+	va_list args;
 
-	char *str = va_arg(types, char *);
+	str = va_arg(args, char *);
 
 	while (str[length] != '\0')
 		length++;
@@ -28,9 +30,11 @@ int print_string(va_list args, char content[])
 
 int print_char(va_list args, char content[])
 {
-	char c = va_arg(args, int);
+	char c;
+	va_list args;
+	c = va_arg(args, int);
 
-	handle_write_char(c, content);
+	return (write(1, &content[0], 1));
 }
 
 /**
@@ -42,5 +46,6 @@ int print_char(va_list args, char content[])
 
 int print_percent(va_list args, char content[])
 {
+	va_list args;
 	return (write(1, "%%", 1));
 }

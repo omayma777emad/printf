@@ -10,16 +10,15 @@
 #define UNUSED(x) (void)(x)
 /**
  * typedef struct spc spc_f - Struct op
- *
  * @spc: The format.
- * @f: The function associated.
+ * @f: function pointer.
  */
 typedef struct spc
 {
 	char spc;
 	int (*f)(va_list, char []);
 } spc_f;
-
+/** struct spc struct op */
 
 /* functions Prototypes */
 

@@ -1,6 +1,5 @@
 #include"main.h"
 
-char *str = va_arg(args, char*);
 /**
  * print_string - Prints a string
  * @args: List a of6 arguments
@@ -11,7 +10,6 @@ int print_string(va_list args, char content[])
 {
 	va_list args;
 	int length = 0;
-	char *str = va_arg(args, char *);
 
 	while (str[length] != '\0')
 		length++;
@@ -28,8 +26,6 @@ int print_string(va_list args, char content[])
 
 int print_char(va_list args, char content[])
 {
-	va_list args;
-	char c;
 
 	return (write(1, &content[0], 1));
 }
@@ -43,6 +39,5 @@ int print_char(va_list args, char content[])
 
 int print_percent(va_list args, char content[])
 {
-	va_list args;
 	return (write(1, "%%", 1));
 }

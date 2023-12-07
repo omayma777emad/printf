@@ -9,7 +9,7 @@
  * Return: int
 */
 
-int handle_content( va_list args, int index, char content[])
+int handle_content(va_list args, int index, char content[])
 {
 	int i,  chars = -1;
 	spc_f spc[] = {

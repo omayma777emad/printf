@@ -54,4 +54,4 @@ void cont_array(char content[], int *cont_index)
 		write(1, &content[0], *cont_index);
 
 	*cont_index = 0;
-}}
+}

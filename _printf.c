@@ -1,7 +1,7 @@
 #include "main.h"
 
 void cont_array(char content[], int *cont_index);
-int handle_content( va_list args, int i, format, char content[]);
+int handle_content( va_list args, int i, char format, char content[]);
 
 /**
  * _printf - Printf function
@@ -11,7 +11,7 @@ int handle_content( va_list args, int i, format, char content[]);
 int _printf(const char *format, ...)
 {
 	int i, output = 0, chars = 0;
-	int cont_index = 0, cont_index = 0;
+	int cont_index = 0;
 	char content[CONT_SIZE];
 
 	va_list args;

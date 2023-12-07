@@ -7,8 +7,9 @@
  * Return: Number of chars
 */
 
-int print_string(va_list args)
+int print_string(va_list args, char content[])
 {
+	UNUSED(content);
 	int length = 0;
 	char *str = va_arg(args, char *);
 
@@ -23,11 +24,11 @@ int print_string(va_list args)
  * Return: Number of chars
 */
 
-int print_char(va_list args)
+int print_char(va_list args, char content[])
 {
 	char c = va_arg(args, int);
 
-	return (handle_write_char(&c));
+	return (handle_write_char(&c, content));
 }
 /**
  * print_percent - Prints a percent sign
@@ -36,7 +37,9 @@ int print_char(va_list args)
  * Return: Number of chars
 */
 
-int print_percent()
+int print_percent(va_list args, char content[])
 {
+	UNUSED(args);
+	UNUSED(content);
 	return (write(1, "%%", 1));
 }

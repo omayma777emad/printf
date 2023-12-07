@@ -9,9 +9,9 @@
 
 int print_string(va_list args, char content[])
 {
-	UNUSED(content);
 	int length = 0;
 	char *str = va_arg(args, char *);
+	UNUSED(content);
 
 	while (str[length] != '\0')
 		length++;
@@ -28,7 +28,7 @@ int print_char(va_list args, char content[])
 {
 	char c = va_arg(args, int);
 
-	return (handle_write_char(&c, content));
+	return (handle_write_char(c, content));
 }
 /**
  * print_percent - Prints a percent sign

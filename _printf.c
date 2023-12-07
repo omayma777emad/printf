@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	int i, output = 0, chars = 0;
 	int cont_index = 0;
 	char content[CONT_SIZE];
+	UNUSED(index);
 
 	va_list args;
 	va_start(args, format);
@@ -30,7 +31,7 @@ int _printf(const char *format, ...)
 		{
 			cont_array(content, &cont_index);
 			++i;
-			output = handle_content(args, i, *format, content);
+			output = handle_content(args, index, *format, content);
 			
 			chars += output;
 		}

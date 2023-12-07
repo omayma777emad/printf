@@ -7,7 +7,8 @@
  * Return: Number of chars
 */
 
-int handle_write_char(char content[])
+int handle_write_char(char c, char content[])
 {
+	UNUSED(c);
 	return (write(1, &content[0], 1));
 }

@@ -6,11 +6,10 @@
  * @content: array to handle print
  * Return: Number of chars
 */
-int print_string(va_list args, char content[])
+int print_string( char str[])
 {
-	va_list args;
 	int length = 0;
-	char str[];
+	char str;
 
 	while (str[length] != '\0')
 		length++;
@@ -25,7 +24,7 @@ int print_string(va_list args, char content[])
  * Return: Number of chars
 */
 
-int print_char(va_list args, char content[])
+int print_char( char content[])
 {
 
 	return (write(1, &content[0], 1));
@@ -38,7 +37,7 @@ int print_char(va_list args, char content[])
  * Return: Number of chars
 */
 
-int print_percent(va_list args, char content[])
+int print_percent()
 {
 	return (write(1, "%%", 1));
 }

@@ -16,8 +16,6 @@ int handle_content( va_list args, int index, char content[])
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
-		{'i', print_int},
-		{'d', print_int},
 		{'\0', NULL}
 	};
 	for (i = 0; spc[i].spc != '\0'; i++)

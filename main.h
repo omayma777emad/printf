@@ -17,7 +17,7 @@
 typedef struct spc
 {
 	char spc;
-	int (*f)(va_list, char[]);
+	int (*f)(va_list);
 } spc_f;
 
 

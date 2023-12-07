@@ -1,8 +1,5 @@
 #include "main.h"
 
-void cont_array(char content[], int *cont_index);
-int handle_content( va_list args, int index, char content[]);
-
 /**
  * _printf - Printf function
  * @format: format.
@@ -10,12 +7,12 @@ int handle_content( va_list args, int index, char content[]);
  */
 int _printf(const char *format, ...)
 {
+	void cont_array(char content[], int *cont_index);
+	int handle_content( va_list args, int index, char content[]);
+
 	int i, output = 0, chars = 0;
 	int cont_index = 0;
 	va_list args;
-	if (format == NULL)
-		return (-1);
-
 	va_start(args, format);
 	char content[CONT_SIZE];
 	
@@ -25,20 +22,20 @@ int _printf(const char *format, ...)
 		{
 			content[cont_index++] = format[i];
 			if (cont_index == CONT_SIZE)
-				cont_array(content, &cont_index);
+				cont_array();
 			chars++;
 		}
 		else
 		{
-			cont_array(content, &cont_index);
+			cont_array();
 			++i;
-			output = handle_content( va_list args, int index, char content[]);
+			output = handle_content( args, int index, char content[]);
 			
 			chars += output;
 		}
 	}
 
-	cont_array(content, &cont_index);
+	cont_array();
 
 	va_end(args);
 

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <string.h>
 
 #define CONT_SIZE 1024
 #define UNUSED(x) (void)(x)
@@ -31,6 +32,6 @@ int print_string(va_list args, char content[]);
 int print_percent(va_list args, char content[]);
 int print_int(va_list args, char content[]);
 int print_rev(va_list args, char content[]);
-
+int print_rotstring(va_list types, char content[]);
 
 #endif

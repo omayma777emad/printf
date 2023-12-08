@@ -30,7 +30,7 @@ int print_rev(va_list args, char content[])
  * Return: Numbers of chars printed
  */
 
-int print_rot13string(va_list types, char content[])
+int print_rotstring(va_list types, char content[])
 {
 	char output;
 	char *str;

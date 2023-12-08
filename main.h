@@ -32,4 +32,5 @@ int print_percent(va_list args, char content[]);
 int print_int(va_list args, char content[]);
 int print_rev(va_list args, char content[]);
 
+
 #endif

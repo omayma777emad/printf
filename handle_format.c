@@ -7,7 +7,6 @@
  * @content: array
  * Return: int
 */
-
 int handle_content(va_list args, int index, char content[])
 {
 	int i,  chars = -1;
@@ -18,12 +17,10 @@ int handle_content(va_list args, int index, char content[])
 		{'i', print_int},
 		{'d', print_int},
 		{'r', print_rev},
-		{'R', print_rotstring},
 		{'\0', NULL}
-	};
+		};
 	for (i = 0; spc[i].spc != '\0'; i++)
 		if (spc[index].spc == spc[i].spc)
 			return (spc[i].f(args, content));
-
-return (chars);
+	return (chars);
 }

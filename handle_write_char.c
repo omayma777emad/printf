@@ -1,4 +1,4 @@
-#include"main.h"
+#include "main.h"
 
 /**
  * handle_write_char - Prints a string
@@ -6,7 +6,6 @@
  * @content: array to handle print
  * Return: Number of chars
 */
-
 int handle_write_char(char c, char content[])
 {
 	UNUSED(c);

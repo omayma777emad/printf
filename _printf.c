@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - Printf function
  * @format: format
@@ -36,7 +35,6 @@ int _printf(const char *format, ...)
 			cont_array(content, &cont_index);
 			++i;
 			int output = handle_content(args, format[i], content);
-
 			if (output < 0)
 			{
 				va_end(args);

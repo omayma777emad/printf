@@ -6,8 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int chars = 0;
-	int cont_index = 0;
+	int chars = 0, cont_index = 0;
 	char content[CONT_SIZE];
 	va_list args;
 

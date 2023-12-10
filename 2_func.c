@@ -9,7 +9,7 @@
 int print_int(va_list args, char content[])
 {
 	int number, n = va_arg(args, int);
-	int chars = 0;
+	int ex, chars = 0;
 
 	if (n < 0)
 	{
@@ -18,7 +18,7 @@ int print_int(va_list args, char content[])
 		n = -n;
 	}
 	number = n;
-	int ex = 1;
+	ex = 1;
 
 	while (number / 10 != 0)
 	{

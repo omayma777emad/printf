@@ -10,7 +10,8 @@ int print_int(va_list args, char content[])
 {
 	int number, n = va_arg(args, int);
 	int ex, chars = 0;
-
+	
+	UNUSED(content);
 	if (n < 0)
 	{
 		_putchar('-');

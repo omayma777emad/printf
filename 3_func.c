@@ -10,27 +10,11 @@ int print_string(va_list args, char content[])
 {
 	int length = 0;
 	char *str = va_arg(args, char *);
-
-	if (str == NULL)
-	{
-		return (-1);
-	}
-
+	
 	UNUSED(content);
-
 	while (str[length] != '\0')
-	{
 		length++;
-	}
-
-	int bytes_written = write(1, str, length);
-
-	if (bytes_written < 0 || bytes_written != length)
-	{
-		return (-1);
-	}
-
-	return (bytes_written);
+	return (write(1, str, length));
 }
 
 /**

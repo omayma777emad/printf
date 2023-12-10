@@ -39,7 +39,7 @@ int print_rotstring(va_list args, char content[])
 	char s1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char s2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	str = va_arg(types, char *);
+	str = va_arg(args, char *);
 	UNUSED(content);
 
 	if (str == NULL)
@@ -59,7 +59,7 @@ int print_rotstring(va_list args, char content[])
 		if (!s1[j])
 		{
 			output = str[i];
-			write(1, output, 1);
+			write(1, &output, 1);
 			chars++;
 		}
 	}

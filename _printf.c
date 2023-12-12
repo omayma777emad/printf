@@ -1,7 +1,6 @@
 #include "main.h"
 
-void cont_array(char content[], int *cont_index);
-int handle_content(va_list args, int i, char content[]);
+void print_buffer(char buffer[], int *buff_ind);
 
 /**
  * _printf - Printf function
@@ -10,35 +9,58 @@ int handle_content(va_list args, int i, char content[]);
  */
 int _printf(const char *format, ...)
 {
-	int i, output = 0, chars = 0;
-	int cont_index = 0;
-	char content[CONT_SIZE];
+	int i, printed = 0, printed_chars = 0;
+	int flags, width, precision, size, buff_ind = 0;
+	va_list list;
+	char buffer[BUFF_SIZE];
 
-	va_list args;
+	if (format == NULL)
+		return (-1);
 
-	va_start(args, format);
+	va_start(list, format);
 
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
-			content[cont_index++] = format[i];
-			if (cont_index == CONT_SIZE)
-				cont_array(content, &cont_index);
-			chars++;
+			buffer[buff_ind++] = format[i];
+			if (buff_ind == BUFF_SIZE)
+				print_buffer(buffer, &buff_ind);
+			/* write(1, &format[i], 1);*/
+			printed_chars++;
 		}
 		else
 		{
-			cont_array(content, &cont_index);
+			print_buffer(buffer, &buff_ind);
+			flags = get_flags(format, &i);
+			width = get_width(format, &i, list);
+			precision = get_precision(format, &i, list);
+			size = get_size(format, &i);
 			++i;
-			output = handle_content(args, i, content);
-			chars += output;
+			printed = handle_print(format, &i, list, buffer,
+				flags, width, precision, size);
+			if (printed == -1)
+				return (-1);
+			printed_chars += printed;
 		}
 	}
 
-	cont_array(content, &cont_index);
+	print_buffer(buffer, &buff_ind);
 
-	va_end(args);
+	va_end(list);
 
-	return (chars);
+	return (printed_chars);
+}
+
+/**
+ * print_buffer - Prints the contents of the buffer if it exist
+ * @buffer: Array of chars
+ * @buff_ind: Index at which to add next char, represents the length.
+ */
+void print_buffer(char buffer[], int *buff_ind)
+{
+	if (*buff_ind > 0)
+		write(1, &buffer[0], *buff_ind);
+
+	*buff_ind = 0;
 }

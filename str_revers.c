@@ -1,67 +1,93 @@
-#include "main.h"
-
 /**
- * print_rev - function that prints a str in reverse
- * @args: list of arguments
- * Return: reversed  string
- * @content: array
-*/
-
-int print_rev(va_list args, char content[])
-{
-
-	char *str = va_arg(args, char*);
-	int i, j = 0;
-
-	UNUSED(content);
-	if (str == NULL)
-		str = "(null)";
-	while (str[j] != '\0')
-		j++;
-	for (i = j - 1; i >= 0; i--)
-		_putchar(str[i]);
-	return (j);
-}
-
-/**
- * print_rotstring - Print a string in rot13.
- * @args: Lista of arguments
- * @content: array
+ * print_reverse - Prints reverse string.
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width
+ * @precision: Precision specification
+ * @size: Size specifier
  * Return: Numbers of chars printed
  */
 
-int print_rotstring(va_list args, char content[])
+int print_reverse(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
 {
-	char output;
+	char *str;
+	int i, count = 0;
+
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(size);
+
+	str = va_arg(types, char *);
+
+	if (str == NULL)
+	{
+		UNUSED(precision);
+
+		str = ")Null(";
+	}
+	for (i = 0; str[i]; i++)
+		;
+
+	for (i = i - 1; i >= 0; i--)
+	{
+		char z = str[i];
+
+		write(1, &z, 1);
+		count++;
+	}
+	return (count);
+}
+/************************* PRINT A STRING IN ROT13 *************************/
+/**
+ * print_rot13string - Print a string in rot13.
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Numbers of chars printed
+ */
+int print_rot13string(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
+{
+	char x;
 	char *str;
 	unsigned int i, j;
-	int chars = 0;
-	char s1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char s2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int count = 0;
+	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	str = va_arg(args, char *);
-	UNUSED(content);
+	str = va_arg(types, char *);
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
 
 	if (str == NULL)
 		str = "(AHYY)";
 	for (i = 0; str[i]; i++)
 	{
-		for (j = 0; s1[j]; j++)
+		for (j = 0; in[j]; j++)
 		{
-			if (s1[j] == str[i])
+			if (in[j] == str[i])
 			{
-				output = s2[j];
-				write(1, &output, 1);
-				chars++;
+				x = out[j];
+				write(1, &x, 1);
+				count++;
 				break;
 			}
 		}
-		if (!s1[j])
+		if (!in[j])
 		{
-			output = str[i];
-			write(1, &output, 1);
-			chars++;
+			x = str[i];
+			write(1, &x, 1);
+			count++;
 		}
 	}
-	return (chars);
+	return (count);
 }
